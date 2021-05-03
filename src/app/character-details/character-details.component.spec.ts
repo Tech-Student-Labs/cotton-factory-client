@@ -43,11 +43,13 @@ describe('CharacterDetailsComponent', () => {
 
   it('loads an id from the activated route', () => {
     const spyRoute = spyOn(route.snapshot.paramMap, 'get');
-    spyRoute.and.returnValue("1");
+    const routeID : string = "2";
+
+    spyRoute.and.returnValue(routeID);
 
     component.ngOnInit();
 
-    expect(component.id).toEqual("1");
+    expect(component.id).toEqual(routeID);
   });
 
   // it('loads data from the character service', () => {
