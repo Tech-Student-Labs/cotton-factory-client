@@ -1,14 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { CharacterServiceAbstract, MockCharacterService } from '../services/character-service-abstract';
-import { CharacterService } from '../services/character.service';
+import { CharacterServiceAbstract, MockCharacterService } from '../../services/character-service-abstract';
+import { CharacterService } from '../../services/character.service';
 
 import { CharacterDetailsComponent } from './character-details.component';
 
 import { of } from "rxjs";
 
-import { routes } from "../app-routing.module";
+import { routes } from "../../app-routing.module";
 
 describe('CharacterDetailsComponent', () => {
   let component: CharacterDetailsComponent;
