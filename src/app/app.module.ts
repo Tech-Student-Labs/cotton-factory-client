@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavComponent } from './components/nav/nav.component';
+import { PlanetComponent } from './components/planet/planet.component';
 
 @NgModule({
   declarations: [
     LandingPageComponent,
-    NavComponent
+    NavComponent,
+    PlanetComponent
   ],
   imports: [
     AppRoutingModule,
