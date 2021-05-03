@@ -7,6 +7,7 @@ import { PlanetComponent } from './components/planet/planet.component';
 import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
 import { SpeciesListComponent } from './components/species-list/species-list.component';
 import { SpeciesPageComponent } from './components/species-page/species-page.component';
+import { PlanetsListComponent } from './components/planets-list/planets-list.component';
 
 const routes: Routes = [
   {
@@ -22,11 +23,15 @@ const routes: Routes = [
     component: PlanetComponent
   },
   {
+    path: 'planetsList',
+    component: PlanetsListComponent
+  },
+  {
     path: 'speciesDetails',
     component: SpeciesDetailsComponent
   },
   {
-    path: 'speciesList',
+    path: 'species',
     component: SpeciesListComponent
   },
   {

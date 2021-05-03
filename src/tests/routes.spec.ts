@@ -20,7 +20,7 @@ describe('App Routes', () => {
     location = TestBed.inject(Location);
   });
 
-  it('should navigate to characterList component', fakeAsync(() => {
+  it('should navigate', fakeAsync(() => {
     router.navigate(['characterList']);
     tick();
     expect(location.path()).toBe('/characterList');
@@ -33,13 +33,17 @@ describe('App Routes', () => {
     tick();
     expect(location.path()).toBe('/planet');
 
+    router.navigate(['planetsList']);
+    tick();
+    expect(location.path()).toBe('/planetsList');
+
     router.navigate(['speciesDetails']);
     tick();
     expect(location.path()).toBe('/speciesDetails');
 
-    router.navigate(['speciesList']);
+    router.navigate(['species']);
     tick();
-    expect(location.path()).toBe('/speciesList');
+    expect(location.path()).toBe('/species');
 
     router.navigate(['speciesPage']);
     tick();

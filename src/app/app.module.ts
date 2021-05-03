@@ -15,11 +15,11 @@ import { SpeciesPageComponent } from './components/species-page/species-page.com
   declarations: [
     LandingPageComponent,
     NavComponent,
-    CharacterListComponent,
-    CharacterComponent,
     PlanetComponent,
-    SpeciesDetailsComponent,
     SpeciesListComponent,
+    CharacterComponent,
+    CharacterListComponent,
+    SpeciesDetailsComponent,
     SpeciesPageComponent
   ],
   imports: [
