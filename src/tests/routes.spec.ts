@@ -48,5 +48,5 @@ describe('App Routes', () => {
     router.navigate(['speciesPage']);
     tick();
     expect(location.path()).toBe('/speciesPage');
-  }))
+  }));
 });
