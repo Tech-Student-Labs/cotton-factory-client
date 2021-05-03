@@ -2,8 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { SpeciesListComponent } from './components/species-list/species-list.component';
+import { CharacterListComponent } from './components/character-list/character-list.component';
 
 const routes: Routes = [
+  {
+    path: 'people/:page',
+    component: CharacterListComponent
+  },
   {
     path: 'species',
     component: SpeciesListComponent,

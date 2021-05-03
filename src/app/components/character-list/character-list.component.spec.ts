@@ -6,6 +6,8 @@ import characterArray from '../../Character.json';
 import { CharacterService } from 'src/app/services/character.service';
 import { MockCharacterService } from 'src/app/services/character-service-abstract';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 describe('CharacterListComponent', () => {
   let component: CharacterListComponent;
@@ -14,7 +16,7 @@ describe('CharacterListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, RouterTestingModule, AppRoutingModule],
       declarations: [ CharacterListComponent ],
       providers: [{provider: CharacterService, useClass: MockCharacterService}]
     })

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CharacterService } from 'src/app/services/character.service';
 import Character from '../../models/Character';
 
@@ -10,13 +11,16 @@ import Character from '../../models/Character';
 export class CharacterListComponent implements OnInit {
 
   characterList : Character[];
+  page : number;
 
-  constructor(private characterService : CharacterService) {
+  constructor(private characterService : CharacterService, private activatedRoute: ActivatedRoute) {
 
    }
 
   ngOnInit(): void {
-    this.characterService.getCharacters().subscribe( (data) => {
+    this.page = +this.activatedRoute.snapshot.paramMap.get('page');
+    
+    this.characterService.getCharacters(this.page).subscribe( (data) => {
       this.characterList = data.results;
     });
   }
