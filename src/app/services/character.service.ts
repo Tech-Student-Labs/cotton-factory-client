@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 
 import Character from "../models/Character";
 
-interface ApiResponse {
+export interface ApiResponse {
   count: number,
   next: string,
   previous: string,
@@ -23,6 +23,10 @@ export class CharacterService {
 
   getCharacter(id : number = 1) : Observable<Character> {
     return this.http.get<Character>(`${this.apiUrl}/${id}`);
+  }
+
+  getCharacters(page: number = 1) : Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(`${this.apiUrl}/?page=${page}`)
   }
 
 }
