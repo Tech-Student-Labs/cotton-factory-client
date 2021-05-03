@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Planets } from '../models/planets';
-import { MockServiceService } from './mock-service.service';
+import { PlanetMockServiceService } from './planet-mock-service.service';
 
 import { PlanetService } from './planet.service';
 
@@ -42,7 +42,7 @@ describe('PlanetService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ { provide: PlanetService, useClass: MockServiceService }]
+      providers: [ { provide: PlanetService, useClass: PlanetMockServiceService }]
     });
     httpServiceSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = TestBed.inject(PlanetService);

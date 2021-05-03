@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class MockServiceService {
+export class PlanetMockServiceService {
 
   constructor() { }
   /**
