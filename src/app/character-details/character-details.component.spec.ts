@@ -15,6 +15,7 @@ describe('CharacterDetailsComponent', () => {
   let fixture: ComponentFixture<CharacterDetailsComponent>;
   let router: Router;
   let route: ActivatedRoute;
+  let charService: CharacterService;
   
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -35,6 +36,7 @@ describe('CharacterDetailsComponent', () => {
 
     router = TestBed.inject(Router);
     route = TestBed.inject(ActivatedRoute);
+    charService = TestBed.inject(CharacterService);
   });
 
   it('should create', () => {
@@ -52,8 +54,10 @@ describe('CharacterDetailsComponent', () => {
     expect(component.id).toEqual(routeID);
   });
 
-  // it('loads data from the character service', () => {
-  //   // component.ngOnInit();
+  it('loads data for a character based on ID', () => {
+    spyOn(route.snapshot.paramMap, 'get').and.returnValue("1");
 
-  // })
+    expect(component.character).toBeDefined();
+  })
+
 });
