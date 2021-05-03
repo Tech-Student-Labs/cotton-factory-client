@@ -15,15 +15,18 @@
         <a class="nav-link" id="linkPeople" routerLink="characterList">People</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="linkPlanets" href="#">Planets</a>
+        <a class="nav-link" id="linkSpecies" routerLink="speciesList">Species</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="linkPlanets" routerLink="planet">Planets</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="linkStarships" href="#">Starships</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      <input id="searchInput" class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button id="searchButton" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>

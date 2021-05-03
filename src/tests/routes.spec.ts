@@ -24,8 +24,25 @@ describe('App Routes', () => {
     router.navigate(['characterList']);
     tick();
     expect(location.path()).toBe('/characterList');
+
     router.navigate(['character']);
     tick();
     expect(location.path()).toBe('/character');
+
+    router.navigate(['planet']);
+    tick();
+    expect(location.path()).toBe('/planet');
+
+    router.navigate(['speciesDetails']);
+    tick();
+    expect(location.path()).toBe('/speciesDetails');
+
+    router.navigate(['speciesList']);
+    tick();
+    expect(location.path()).toBe('/speciesList');
+
+    router.navigate(['speciesPage']);
+    tick();
+    expect(location.path()).toBe('/speciesPage');
   }))
 });

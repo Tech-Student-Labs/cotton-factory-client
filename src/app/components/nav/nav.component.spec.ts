@@ -1,9 +1,6 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
 import { NavComponent } from './nav.component';
-import { Location } from '@angular/common';
-import { Router } from '@angular/router';
-import { AppRoutingModule } from 'src/app/app-routing.module';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -32,8 +29,11 @@ describe('NavComponent', () => {
     expect(html.querySelector('#navCollapse')).toBeTruthy();
     expect(html.querySelector('#linkPlanets')).toBeTruthy();
     expect(html.querySelector('#linkPeople')).toBeTruthy();
+    expect(html.querySelector('#linkSpecies')).toBeTruthy();
     expect(html.querySelector('#linkStarships')).toBeTruthy();
     expect(html.querySelector('#linkHome')).toBeTruthy();
+    expect(html.querySelector('#searchInput')).toBeTruthy();
+    expect(html.querySelector('#searchButton')).toBeTruthy();
 
     // dummy test(s)
     expect(html.querySelector('#badLink')).toBeFalsy();

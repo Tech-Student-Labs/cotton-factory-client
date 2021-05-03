@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { CharacterComponent } from './components/Character/Character.component';
-import { CharacterListComponent } from './components/CharacterList/CharacterList.component';
+import { CharacterComponent } from './components/character/character.component';
+import { CharacterListComponent } from './components/character-list/character-list.component';
+import { PlanetComponent } from './components/planet/planet.component';
+import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
+import { SpeciesListComponent } from './components/species-list/species-list.component';
+import { SpeciesPageComponent } from './components/species-page/species-page.component';
 
 const routes: Routes = [
   {
@@ -12,6 +16,22 @@ const routes: Routes = [
   {
     path: 'characterList',
     component: CharacterListComponent
+  },
+  {
+    path: 'planet',
+    component: PlanetComponent
+  },
+  {
+    path: 'speciesDetails',
+    component: SpeciesDetailsComponent
+  },
+  {
+    path: 'speciesList',
+    component: SpeciesListComponent
+  },
+  {
+    path: 'speciesPage',
+    component: SpeciesPageComponent
   }
 ];
 
