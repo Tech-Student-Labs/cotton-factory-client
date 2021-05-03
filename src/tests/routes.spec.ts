@@ -19,4 +19,10 @@ describe('App Routes', () => {
     router = TestBed.inject(Router);
     location = TestBed.inject(Location);
   });
+
+  it('should navigate to characterList component', fakeAsync(() => {
+    router.navigate(['characterList']);
+    tick();
+    expect(location.path()).toBe('/characterList');
+  }))
 });
