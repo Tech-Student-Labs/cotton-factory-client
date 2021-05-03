@@ -24,5 +24,8 @@ describe('App Routes', () => {
     router.navigate(['characterList']);
     tick();
     expect(location.path()).toBe('/characterList');
+    router.navigate(['character']);
+    tick();
+    expect(location.path()).toBe('/character');
   }))
 });
