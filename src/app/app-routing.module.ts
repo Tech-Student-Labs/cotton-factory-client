@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { SpeciesListComponent } from './components/species-list/species-list.component';
+import { PlanetsListComponent } from './components/planets-list/planets-list.component';
 
 export const routes: Routes = [
   {
@@ -10,6 +11,10 @@ export const routes: Routes = [
     component: SpeciesListComponent,
   },
   { path: 'character/:id', component : CharacterDetailsComponent},
+  {
+    path: 'planets',
+    component: PlanetsListComponent,
+  }
 ];
 
 @NgModule({
