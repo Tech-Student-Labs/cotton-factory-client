@@ -10,7 +10,7 @@ import { CharacterListComponent } from './components/character-list/character-li
 @NgModule({
   declarations: [
     LandingPageComponent,
-    NavComponent,
+    NavComponent, 
     CharacterComponent,
     CharacterListComponent
   ],
