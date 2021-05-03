@@ -14,6 +14,7 @@ import { SpeciesPageComponent } from './components/species-page/species-page.com
 import { PlanetsListComponent } from './components/planets-list/planets-list.component';
 import { CharacterComponent } from './components/character/character.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CharacterListComponent } from './components/character-list/character-li
     PlanetsListComponent,
   ],
   imports: [
+    HttpClientModule,
     AppRoutingModule,
     BrowserModule
   ],

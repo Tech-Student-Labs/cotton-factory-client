@@ -34,4 +34,5 @@ describe('NavComponent', () => {
     const routerLinks = html.querySelector('#speciesLink');
     expect(routerLinks.getAttribute('routerLink')).toEqual('species');
   });
+
 });
