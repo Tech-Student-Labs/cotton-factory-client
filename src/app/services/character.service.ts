@@ -5,7 +5,9 @@ import { Observable } from "rxjs";
 
 import Character from "../models/Character";
 
-interface ApiResponse {
+import { CharacterServiceAbstract } from './character-service-abstract';
+
+export interface ApiResponse {
   count: number,
   next: string,
   previous: string,
@@ -15,7 +17,7 @@ interface ApiResponse {
 @Injectable({
   providedIn: 'root'
 })
-export class CharacterService {
+export class CharacterService implements CharacterServiceAbstract {
 
   apiUrl : string = "http://swapi.dev/api/people"
 
@@ -24,5 +26,8 @@ export class CharacterService {
   getCharacter(id : number = 1) : Observable<Character> {
     return this.http.get<Character>(`${this.apiUrl}/${id}`);
   }
-
+  
+  getCharacters(page: number = 1) : Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(`${this.apiUrl}/?page=${page}`)
+  }
 }
