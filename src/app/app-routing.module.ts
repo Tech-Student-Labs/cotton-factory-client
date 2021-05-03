@@ -6,12 +6,7 @@ import { SpeciesListComponent } from './components/species-list/species-list.com
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { PlanetsListComponent } from './components/planets-list/planets-list.component';
 
-
 export const routes: Routes = [
-  {
-    path: 'people/:page',
-    component: CharacterListComponent
-  },
   {
     path: 'species',
     component: SpeciesListComponent,

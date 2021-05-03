@@ -4,10 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavComponent } from './components/nav/nav.component';
-import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { PlanetComponent } from './components/planet/planet.component';
 
 import { SpeciesListComponent } from './components/species-list/species-list.component';
+
+import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
 import { SpeciesPageComponent } from './components/species-page/species-page.component';
 import { PlanetsListComponent } from './components/planets-list/planets-list.component';
