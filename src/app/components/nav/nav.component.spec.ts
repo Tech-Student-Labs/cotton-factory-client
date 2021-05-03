@@ -8,22 +8,19 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 describe('NavComponent', () => {
   let component: NavComponent;
   let fixture: ComponentFixture<NavComponent>;
-  let location: Location;
-  let router: Router;
+  let html;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavComponent ],
-      imports: [ AppRoutingModule ]
+      declarations: [ NavComponent ]
     })
     .compileComponents();
-    router = TestBed.inject(Router);
-    location = TestBed.inject(Location);
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NavComponent);
     component = fixture.componentInstance;
+    html = fixture.debugElement.nativeElement;
     fixture.detectChanges();
   });
 
@@ -31,9 +28,14 @@ describe('NavComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should be able to route to LandingPageComponent by navigating to http://localhost:4200/', fakeAsync(() => {
-    router.navigate(['']);
-    tick();
-    expect(location.path()).toBe('');
-  }));
+  it('should render routing links inside navbar', () => {
+    expect(html.querySelector('#navCollapse')).toBeTruthy();
+    expect(html.querySelector('#linkPlanets')).toBeTruthy();
+    expect(html.querySelector('#linkPeople')).toBeTruthy();
+    expect(html.querySelector('#linkStarships')).toBeTruthy();
+    expect(html.querySelector('#linkHome')).toBeTruthy();
+
+    // dummy test(s)
+    expect(html.querySelector('#badLink')).toBeFalsy();
+  });
 });
