@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavComponent } from './components/nav/nav.component';
 import { CharacterComponent } from './character/character.component';
 import { CharacterListComponent } from './character-list/character-list.component';
+import { CharacterDetailsComponent } from './character-details/character-details.component';
 
 @NgModule({
   declarations: [
     LandingPageComponent,
     NavComponent,
     CharacterComponent,
-    CharacterListComponent
+    CharacterListComponent,
+    CharacterDetailsComponent
   ],
   imports: [
     AppRoutingModule,
