@@ -1,22 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { SpeciesListComponent } from './components/species-list/species-list.component';
 import { PlanetsListComponent } from './components/planets-list/planets-list.component';
-import { CharacterDetailsComponent } from './character-details/character-details.component';
 
 export const routes: Routes = [
   {
     path: 'species',
     component: SpeciesListComponent,
   },
+  { path: 'character/:id', component : CharacterDetailsComponent},
   {
     path: 'planets',
     component: PlanetsListComponent,
-  },
-  {
-    path:'Character/:id',
-    component: CharacterDetailsComponent
   }
 ];
 
