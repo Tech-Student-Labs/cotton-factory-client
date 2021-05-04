@@ -2,9 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharacterListComponent } from './character-list.component';
 import  Character  from '../../models/Character';
+
 import characterArray from '../../tests/data/Character.json';
 import { CharacterService } from 'src/app/services/character.service';
 import { MockCharacterService } from 'src/app/tests/data/character-service-abstract';
+
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppRoutingModule } from 'src/app/app-routing.module';
