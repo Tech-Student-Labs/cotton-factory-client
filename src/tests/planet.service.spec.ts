@@ -1,13 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { PlanetMockServiceService } from './planet-mock-service.service';
-
-import { PlanetService } from './planet.service';
-
-// API Response that is returned from the API Call
+import { PlanetService } from 'src/app/services/planet.service';
+import { PlanetMockServiceService } from 'src/app/tests/data/planet-mock-service.service';
 
 // A test API Response used for testing
-const APIResponse1: {} = {
+const APIResponse1: object = {
   climate: "Arid",
   created: "2014-12-09T13:50:49.641000Z",
   diameter: "10465",
@@ -20,7 +17,7 @@ const APIResponse1: {} = {
   orbital_period: "304",
   population: "120000",
   residents: [
-    "https://swapi.dev/api/people/1/"
+  "https://swapi.dev/api/people/1/"
   ],
   rotation_period: "23",
   surface_water: "1",

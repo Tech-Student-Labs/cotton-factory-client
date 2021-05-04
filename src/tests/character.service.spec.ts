@@ -1,13 +1,10 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule} from '@angular/common/http/testing';
-
+import { HttpClientTestingModule} from "@angular/common/http/testing";
 import { of } from "rxjs";
-
-import Character from '../models/Character';
-import characters from "./data/Character.json";
-import { CharacterService } from '../services/character.service';
-
-import { convertCharacter } from "../shared/utilities";
+import Character from '../app/models/Character';
+import characters from "../app/tests/data/Character.json";
+import { CharacterService } from "../app/services/character.service";
+import { convertCharacter } from "../app/shared/utilities";
 
 describe('CharacterService', () => {
   let service: CharacterService;
@@ -40,12 +37,14 @@ describe('CharacterService', () => {
   });
 
   it('getCharacters should be defined and return the list of characters', () => {
-    const listOfCharacters: Character[] = [convertCharacter(characters[1])]
+    //convert from underscores to camelCase
+    const listOfCharacters: Character[] = characters.map(char => convertCharacter(char));
 
     httpClientSpy.get.and.returnValue(of(listOfCharacters));
-    expect(service.getCharacters()).toBeDefined();
 
     service.getCharacters(1).subscribe((data)=>{
+      //compare lengths of data and mock data
+      expect(data.length).toEqual(listOfCharacters.length);
       expect(data).toEqual(listOfCharacters);
     });
   });
