@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { APIResponse } from './planet.service';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,7 @@ export class PlanetMockServiceService {
   /**
    * getAll() will return the results object to the planet.service.spec.ts file 
    */
-  getAll() {
+  getAll(): Observable<any> {
     return of(this.results)
   }
 }

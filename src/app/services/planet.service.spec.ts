@@ -6,14 +6,6 @@ import { PlanetMockServiceService } from './planet-mock-service.service';
 
 import { PlanetService } from './planet.service';
 
-// API Response that is returned from the API Call
-interface APIResponse {
-  count?: number;
-  next?: string;
-  previous?: string;
-  results: Planets[];
-}
-
 // A test API Response used for testing
 const APIResponse1: {} = {
   climate: "Arid",
