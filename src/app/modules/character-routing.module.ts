@@ -10,7 +10,7 @@ export const routes : Routes = [
     component: CharacterListComponent
   },
 
-  { path: ':id', component : CharacterDetailsComponent},
+  { path: 'details/:id', component : CharacterDetailsComponent},
 ]
 
 @NgModule({
