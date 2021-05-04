@@ -2,7 +2,8 @@ import { HtmlParser } from '@angular/compiler';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharacterComponent } from './character.component';
-import characterArray from '../../Character.json';
+import characterArray from '../../character.json';
+import { convertCharacter } from 'src/app/shared/utilities';
 
 describe('CharacterComponent', () => {
   let component: CharacterComponent;
@@ -19,9 +20,9 @@ describe('CharacterComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CharacterComponent);
     component = fixture.componentInstance;
-    component.character = characterArray[0];
+    component.character = convertCharacter(characterArray[0]);
     html = fixture.nativeElement;
-    component.character = characterArray[0];
+    component.character = convertCharacter(characterArray[0]);
     fixture.autoDetectChanges();
   });
 
