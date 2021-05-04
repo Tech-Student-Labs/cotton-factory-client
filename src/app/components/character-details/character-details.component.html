@@ -1,4 +1,4 @@
-<div class="container char-container">
+<div *ngIf="character; else loadingBlock" class="container char-container">
     <h1 class="display-1">{{character.name}}</h1>
     <table class="table mt-4">
         <thead class="thead">
@@ -36,10 +36,10 @@
             <th scope="row">Gender</th>
             <td>{{character.gender}}</td>
           </tr>
-          <!-- <tr>
-            <th scope="row">Homeworld</th>
-            <td>{{character.homeworld}}</td>
-          </tr> -->
         </tbody>
     </table>
 </div>
+
+<ng-template #loadingBlock>
+    loading
+</ng-template>
