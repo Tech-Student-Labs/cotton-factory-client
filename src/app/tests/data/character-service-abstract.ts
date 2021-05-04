@@ -4,6 +4,8 @@ import ApiResponse from "src/app/shared/ApiResponse";
 
 import characters from "./Character.json";
 
+import {convertCharacter} from "../../shared/utilities";
+
 export abstract class CharacterServiceAbstract {
     public abstract getCharacters() : Observable<ApiResponse>;
     public abstract getCharacter() : Observable<Character>;
@@ -15,6 +17,6 @@ export class MockCharacterService implements CharacterServiceAbstract {
     }
 
     public getCharacter() : Observable<Character> {
-        return of(characters[0]);
+        return of(convertCharacter(characters[0]));
     }
 }

@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
+import { convertCharacter } from "../../shared/utilities"; 
+
 describe('CharacterListComponent', () => {
   let component: CharacterListComponent;
   let fixture: ComponentFixture<CharacterListComponent>;
@@ -29,7 +31,7 @@ describe('CharacterListComponent', () => {
     fixture = TestBed.createComponent(CharacterListComponent);
     component = fixture.componentInstance;
     html = fixture.nativeElement;
-    component.characterList = characterArray as Character[];
+    component.characterList = characterArray.map(char => convertCharacter(char))
     fixture.autoDetectChanges();
   });
 

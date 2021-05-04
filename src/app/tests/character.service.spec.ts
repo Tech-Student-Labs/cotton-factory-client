@@ -7,6 +7,8 @@ import Character from '../models/Character';
 import characters from "./data/Character.json";
 import { CharacterService } from '../services/character.service';
 
+import { convertCharacter } from "../shared/utilities";
+
 describe('CharacterService', () => {
   let service: CharacterService;
   let httpClientSpy: {get: jasmine.Spy};
@@ -26,7 +28,7 @@ describe('CharacterService', () => {
   });
 
   it('getCharacter should be definied and return the characters', () => {
-    const OneCharacter: Character = characters[0];
+    const OneCharacter: Character = convertCharacter(characters[0]);
 
     httpClientSpy.get.and.returnValue(of(OneCharacter));
     expect(service.getCharacter()).toBeDefined();
@@ -38,13 +40,13 @@ describe('CharacterService', () => {
   });
 
   it('getCharacters should be defined and return the list of characters', () => {
-    const listOfCharacters: Character[] = characters;
+    const listOfCharacters: Character[] = [convertCharacter(characters[1])]
 
     httpClientSpy.get.and.returnValue(of(listOfCharacters));
     expect(service.getCharacters()).toBeDefined();
 
     service.getCharacters(1).subscribe((data)=>{
-      expect(data.results).toEqual(listOfCharacters);
+      expect(data).toEqual(listOfCharacters);
     });
   });
   
