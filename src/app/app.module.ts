@@ -9,10 +9,11 @@ import { PlanetComponentDetails } from './components/planet-details/planet-detai
 import { SpeciesListComponent } from './components/species-list/species-list.component';
 import { CharacterComponent } from './components/character/character.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
-import { CharacterDetailsComponent } from './character-details/character-details.component';
+import { CharacterDetailsComponent } from './components/character-details/character-details.component';
 import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
 import { SpeciesPageComponent } from './components/species-page/species-page.component';
 import { PlanetsListComponent } from './components/planets-list/planets-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PlanetsListComponent } from './components/planets-list/planets-list.com
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [LandingPageComponent]

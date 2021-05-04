@@ -8,7 +8,9 @@ import { Planets } from 'src/app/models/Planets';
 })
 
 export class PlanetComponentDetails implements OnInit {
+  
   planet: Planets[];
+
   constructor() { }
 
   ngOnInit(): void {    

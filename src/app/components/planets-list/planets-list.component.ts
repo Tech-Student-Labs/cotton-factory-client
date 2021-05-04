@@ -9,6 +9,7 @@ import { PlanetService } from 'src/app/services/planet.service';
   styleUrls: ['./planets-list.component.css']
 })
 export class PlanetsListComponent implements OnInit {
+  
   @Input() planets: Planets[] = [];
 
   constructor(private PlanetService: PlanetService) { }
