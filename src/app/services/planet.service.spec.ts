@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { Planets } from '../models/planets';
 import { PlanetMockServiceService } from './planet-mock-service.service';
 
 import { PlanetService } from './planet.service';
@@ -45,7 +43,7 @@ describe('PlanetService', () => {
   });
 
   it('should get the information of the planet', () => {
-    let planets: Planets = new Planets();
+    // let planets: Planets = new Planets();
     httpServiceSpy.get.and.returnValue(of(APIResponse1));
     service.getAll().subscribe( data => {
       expect(data.results).toEqual(service.planets);
