@@ -1,8 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { SpeciesListComponent } from './components/species-list/species-list.component';
+import { PlanetsListComponent } from './components/planets-list/planets-list.component';
 
-const routes: Routes = [];
+
+export const routes: Routes = [
+    {
+      path: 'people',
+      loadChildren: () => import('src/app/modules/character.module').then(mod => mod.CharacterModule),
+    },
+    {
+    path: 'species',
+    component: SpeciesListComponent,
+  },
+  {
+    path: 'planets',
+    component: PlanetsListComponent,
+  }
+];
 
 @NgModule({
   declarations: [],

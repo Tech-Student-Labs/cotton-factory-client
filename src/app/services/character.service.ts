@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
 import Character from "../models/Character";
-import { CharacterServiceAbstract } from './character-service-abstract';
+import { CharacterServiceAbstract } from '../tests/data/character-service-abstract';
 
 export interface ApiResponse {
   count: number,
@@ -16,6 +16,7 @@ export interface ApiResponse {
 @Injectable({
   providedIn: 'root'
 })
+
 export class CharacterService implements CharacterServiceAbstract {
 
   apiUrl : string = "http://swapi.dev/api/people"
