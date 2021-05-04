@@ -1,6 +1,6 @@
 import { Observable, of } from "rxjs";
-import Character from "../../models/Character";
-import { ApiResponse } from "../../services/character.service";
+import Character from "src/app/models/Character";
+import ApiResponse from "src/app/shared/ApiResponse";
 
 import characters from "./Character.json";
 
