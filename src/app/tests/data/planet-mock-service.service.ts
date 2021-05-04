@@ -11,7 +11,7 @@ export class PlanetMockServiceService {
   /**
    * results will return the mock data for the planet.service.spec.ts file to test 
    */
-  results: object = {
+  results: {} = {
     climate: "Arid",
     created: "2014-12-09T13:50:49.641000Z",
     diameter: "10465",

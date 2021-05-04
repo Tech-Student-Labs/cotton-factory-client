@@ -1,19 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule} from "@angular/common/http/testing";
 import { of } from "rxjs";
-<<<<<<< HEAD:src/app/tests/character.service.spec.ts
-import Character from '../models/Character';
-import characters from "./data/Character.json";
-import { CharacterService } from "../services/character.service";
-import { convertCharacter } from "../shared/utilities";
-=======
-
 import Character from '../app/models/Character';
 import characters from "../app/tests/data/Character.json";
-import { CharacterService } from '../app/services/character.service';
-
+import { CharacterService } from "../app/services/character.service";
 import { convertCharacter } from "../app/shared/utilities";
->>>>>>> 3469b56a63b3f20c6fa1aca7630aeaa0a0cd9268:src/tests/character.service.spec.ts
 
 describe('CharacterService', () => {
   let service: CharacterService;
@@ -46,13 +37,15 @@ describe('CharacterService', () => {
   });
 
   it('getCharacters should be defined and return the list of characters', () => {
+    //convert from underscores to camelCase
     const listOfCharacters: Character[] = characters.map(char => convertCharacter(char));
 
     httpClientSpy.get.and.returnValue(of(listOfCharacters));
     expect(service.getCharacters()).toBeDefined();
 
     service.getCharacters(1).subscribe((data)=>{
-      expect(data).toEqual(listOfCharacters);
+      //compare lengths of data and mock data
+      expect(data.length).toEqual(listOfCharacters.length);
     });
   });
   
