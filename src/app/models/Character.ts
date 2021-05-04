@@ -1,5 +1,5 @@
 export default interface Character {
-    name: string,
+    characterName: string,
     height: string,
     mass: string,
     hairColor: string,

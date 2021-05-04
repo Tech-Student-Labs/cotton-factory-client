@@ -17,8 +17,11 @@ export class CharacterListComponent implements OnInit {
 
    }
 
+//note where is injection  
   ngOnInit(): void {
-    this.page = +this.activatedRoute.snapshot.paramMap.get('page');
+    this.activatedRoute.paramMap.subscribe( (data) => {
+      this.page = +data.get('page');
+    });
     
     this.characterService.getCharacters(this.page).subscribe( (data) => {
       this.characterList = data;

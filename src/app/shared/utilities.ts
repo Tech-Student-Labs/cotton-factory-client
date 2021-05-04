@@ -21,7 +21,7 @@ export interface jsonCharacter {
 
 export function convertCharacter (character: jsonCharacter): Character {
     return {
-      name: character.name,
+      characterName: character.name,
       height: character.height,
       mass: character.mass,
       hairColor: character.hair_color,
