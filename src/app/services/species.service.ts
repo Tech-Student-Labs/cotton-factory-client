@@ -16,12 +16,12 @@ export class SpeciesService {
 
   constructor(public http: HttpClient) { }
 
-  getAll(): Observable<ApiResponse>{
+  getAll(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.apiURL);
   }
   
-  getById(id: number): Observable<any>{
-    return this.http.get(this.apiURL + id);
+  getById(id: number): Observable<Species> {
+    return this.http.get<Species>(this.apiURL + id);
   }
 
   getNextPage(){

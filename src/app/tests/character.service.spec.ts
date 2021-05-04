@@ -1,12 +1,9 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule} from '@angular/common/http/testing';
-
+import { HttpClientTestingModule} from "@angular/common/http/testing";
 import { of } from "rxjs";
-
 import Character from '../models/Character';
 import characters from "./data/Character.json";
-import { CharacterService } from '../services/character.service';
-
+import { CharacterService } from "../services/character.service";
 import { convertCharacter } from "../shared/utilities";
 
 describe('CharacterService', () => {

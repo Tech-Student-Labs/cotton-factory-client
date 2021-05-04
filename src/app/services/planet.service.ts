@@ -3,6 +3,7 @@ import { Planets } from '../models/planets';
 import { HttpClient } from "@angular/common/http"
 
 import ApiResponse from "../shared/ApiResponse";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class PlanetService {
   constructor(private http: HttpClient) { }
 
   // Returns a list of all the planets in the API as an observable
-  getAll(){
+  getAll() : Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.endpoint);
   }
 }
