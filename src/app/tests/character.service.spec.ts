@@ -37,7 +37,7 @@ describe('CharacterService', () => {
   });
 
   it('getCharacters should be defined and return the list of characters', () => {
-    const listOfCharacters: Character[] = [convertCharacter(characters[1])]
+    const listOfCharacters: Character[] = characters.map(char => convertCharacter(char));
 
     httpClientSpy.get.and.returnValue(of(listOfCharacters));
     expect(service.getCharacters()).toBeDefined();

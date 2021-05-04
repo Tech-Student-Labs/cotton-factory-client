@@ -45,7 +45,6 @@ describe('PlanetService', () => {
   });
 
   it('should get the information of the planet', () => {
-    let planets: Planets = new Planets();
     httpServiceSpy.get.and.returnValue(of(APIResponse1));
     service.getAll().subscribe( data => {
       expect(data.results).toEqual(service.planets);
