@@ -1,20 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule} from '@angular/common/http/testing';
-<<<<<<< HEAD
 
 import { of } from "rxjs";
 
 import Character from '../models/Character';
 import characters from "./data/Character.json";
 import { CharacterService } from '../services/character.service';
-=======
-import { CharacterService, ApiResponse } from '../services/character.service';
-
-import { Observable, of } from "rxjs";
-
-import Character from '../models/Character';
-import characters from "./data/Character.json";
->>>>>>> 31b2771af5cb4a90a0e9cd833e5bd1be1211ee00
 
 describe('CharacterService', () => {
   let service: CharacterService;

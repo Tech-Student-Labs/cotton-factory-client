@@ -3,16 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import Species from '../models/Species';
 
-<<<<<<< HEAD
 import ApiResponse from "../shared/ApiResponse";
-=======
-export interface ApiResponse {
-  count: string,
-  next?: string,
-  previous?: string,
-  results: Species[];
-}
->>>>>>> 31b2771af5cb4a90a0e9cd833e5bd1be1211ee00
 
 @Injectable({
   providedIn: 'root'
