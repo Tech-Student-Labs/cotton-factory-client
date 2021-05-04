@@ -60,4 +60,8 @@ describe('CharacterDetailsComponent', () => {
     expect(component.character).toBeDefined();
   })
 
+  it('character class prop should not be undefined ', () => {
+   expect(component.character).toBeDefined();
+  });
+
 });
