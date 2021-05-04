@@ -1,10 +1,8 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { SpeciesService } from 'src/app/services/species.service';
-import species from 'src/app/tests/data/Species.json';
-
-
+import species from '../Species.json';
+import { SpeciesService } from './species.service';
 
 describe('SpeciesService', () => {
   let service: SpeciesService;
@@ -12,8 +10,8 @@ describe('SpeciesService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [],
+      imports: [HttpClientModule],
+      providers: [HttpClient],
     });
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = new SpeciesService(httpClientSpy as any);
@@ -21,14 +19,6 @@ describe('SpeciesService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
-  });
-
-  it('should get all species objects', () => {
-    httpClientSpy.get.and.returnValue(of(species));
-    service.getAll().subscribe(data => {
-      expect(data.results[1]).toEqual(species.results[1]);
-      expect(data.results.length).toEqual(3);
-    });
   });
 
   it('should get a species by id', () => {
