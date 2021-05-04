@@ -41,11 +41,11 @@ describe('CharacterService', () => {
     const listOfCharacters: Character[] = characters.map(char => convertCharacter(char));
 
     httpClientSpy.get.and.returnValue(of(listOfCharacters));
-    expect(service.getCharacters()).toBeDefined();
 
     service.getCharacters(1).subscribe((data)=>{
       //compare lengths of data and mock data
       expect(data.length).toEqual(listOfCharacters.length);
+      expect(data).toEqual(listOfCharacters);
     });
   });
   

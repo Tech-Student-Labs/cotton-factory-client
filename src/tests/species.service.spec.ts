@@ -3,12 +3,6 @@ import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { SpeciesService } from 'src/app/services/species.service';
 import species from 'src/app/tests/data/Species.json';
-<<<<<<< HEAD:src/app/tests/species.service.spec.ts
-import { SpeciesService } from '../services/species.service';
-=======
-
-
->>>>>>> 3469b56a63b3f20c6fa1aca7630aeaa0a0cd9268:src/tests/species.service.spec.ts
 
 describe('SpeciesService', () => {
   let service: SpeciesService;

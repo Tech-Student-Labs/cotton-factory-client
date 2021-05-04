@@ -17,7 +17,7 @@ const APIResponse1: object = {
   orbital_period: "304",
   population: "120000",
   residents: [
-    "https://swapi.dev/api/people/1/"
+  "https://swapi.dev/api/people/1/"
   ],
   rotation_period: "23",
   surface_water: "1",
