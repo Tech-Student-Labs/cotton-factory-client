@@ -1,10 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule} from "@angular/common/http/testing";
 import { of } from "rxjs";
+<<<<<<< HEAD:src/app/tests/character.service.spec.ts
 import Character from '../models/Character';
 import characters from "./data/Character.json";
 import { CharacterService } from "../services/character.service";
 import { convertCharacter } from "../shared/utilities";
+=======
+
+import Character from '../app/models/Character';
+import characters from "../app/tests/data/Character.json";
+import { CharacterService } from '../app/services/character.service';
+
+import { convertCharacter } from "../app/shared/utilities";
+>>>>>>> 3469b56a63b3f20c6fa1aca7630aeaa0a0cd9268:src/tests/character.service.spec.ts
 
 describe('CharacterService', () => {
   let service: CharacterService;
