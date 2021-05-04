@@ -14,6 +14,6 @@ export class PlanetComponentDetails implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 }
