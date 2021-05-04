@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import Starship, { StarshipJson } from '../models/Starship';
+import ApiResponse from '../shared/ApiResponse';
 
 import { convertStarship } from '../shared/utilities';
 
@@ -21,6 +22,14 @@ export class StarshipService {
     return this.httpClient.get<any>(`${this.apiURL}/${id}`).pipe(tap((data) => {
       return convertStarship(data);
     }));
+  }
+
+  getStarships() : Observable<Starship[]> {
+    return this.httpClient.get<ApiResponse>(`${this.apiURL}`).pipe(map((data : ApiResponse) : Starship[] => {      
+      return data.results.map((character : StarshipJson) => {
+        return convertStarship(character);
+      })
+    }))
   }
 
 }

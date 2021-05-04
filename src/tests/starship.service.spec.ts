@@ -15,6 +15,7 @@ describe('StarshipService', () => {
     });
     
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+
     service = TestBed.inject(StarshipService);
   });
 
@@ -23,12 +24,23 @@ describe('StarshipService', () => {
   });
 
   it('testing the getStarship functionality',()=>{
-    const fake : Starship = convertStarship(starships[0]);
+    const ship : Starship = convertStarship(starships[0]);
     
-    httpClientSpy.get.and.returnValue(of(fake))
+    httpClientSpy.get.and.returnValue(of(ship))
     service.getStarship(1).subscribe((data)=>{
-      expect(data).toEqual(fake);
+      expect(data).toEqual(ship);
+    });
+  })
+
+  it('get all starships', () => {
+    const ships : Starship[] = starships.map(ship => convertStarship(ship));
+
+    httpClientSpy.get.and.returnValue(of(ships))
+
+    service.getStarships().subscribe(data => {
+      expect(data).toEqual(ships);
     });
 
+    
   })
 });
