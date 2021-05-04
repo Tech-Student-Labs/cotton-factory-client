@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+<<<<<<< HEAD
+=======
+
+>>>>>>> faf188c2b0cdda88241e982a8e4d7a6222951e06
 import { PlanetsListComponent } from './planets-list.component';
 
 describe('PlanetsListComponent', () => {

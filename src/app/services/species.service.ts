@@ -29,11 +29,11 @@ export class SpeciesService {
     return this.http.get(this.apiURL + id);
   }
 
-  getNextPage(): void{
+  getNextPage(){
     
   }
   
-  getPrevPage(): void{
+  getPrevPage(){
     
   }
   
