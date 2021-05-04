@@ -1,1 +1,65 @@
-<p>character-details works!</p>
+
+<!-- 
+    name: string,
+    height: string,
+    mass: string,
+    hairColor: string,
+    skinColor: string,
+    eyeColor: string,
+    birthYear: string,
+    gender: string,
+    homeworld: string,
+    films: string[],
+    species: string[],
+    vehicles: string[],
+    starships: string[],
+    created: string,
+    edited: string,
+    url: string,
+ -->
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Attribute</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Name</th>
+        <td>{{character.name}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Height</th>
+        <td>{{character.height}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Mass</th>
+        <td>{{character.mass}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Hair Color</th>
+        <td>{{character.hairColor}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Skin Color</th>
+        <td>{{character.skinColor}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Eye Color</th>
+        <td>{{character.eyeColor}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Birth year</th>
+        <td>{{character.birthYear}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Gender</th>
+        <td>{{character.gender}}</td>
+      </tr>
+      <!-- <tr>
+        <th scope="row">Homeworld</th>
+        <td>{{character.homeworld}}</td>
+      </tr> -->
+    </tbody>
+</table>

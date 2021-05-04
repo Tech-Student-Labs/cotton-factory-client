@@ -20,6 +20,7 @@ export class CharacterDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.characterService.getCharacter().subscribe(character => {
+      console.log(character)
       this.character = character;
     });
   }

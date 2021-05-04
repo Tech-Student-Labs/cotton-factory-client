@@ -16,7 +16,7 @@ export class CharacterService {
   constructor(private http: HttpClient) { }
 
   getCharacter(id : number = 1) : Observable<Character> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`).pipe(tap( (data) => {
+    return this.http.get<jsonCharacter>(`${this.apiUrl}/${id}`).pipe(map((data : jsonCharacter) => {
       return convertCharacter(data);
     }));
   }
