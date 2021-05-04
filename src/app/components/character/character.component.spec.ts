@@ -2,7 +2,7 @@ import { HtmlParser } from '@angular/compiler';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharacterComponent } from './character.component';
-import characterArray from '../../tests/data/character.json';
+import characterArray from 'src/app/tests/data/character.json';
 import { convertCharacter } from 'src/app/shared/utilities';
 
 describe('CharacterComponent', () => {
