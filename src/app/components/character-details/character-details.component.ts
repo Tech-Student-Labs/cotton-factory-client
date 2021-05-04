@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import Character from '../../models/Character';
 import { CharacterService } from '../../services/character.service';
 
@@ -10,7 +10,7 @@ import { CharacterService } from '../../services/character.service';
 })
 export class CharacterDetailsComponent implements OnInit {
 
-  public id : string;
+  public id : number;
   public character : Character;
 
   constructor(private characterService: CharacterService, private activatedRoute: ActivatedRoute) {
@@ -18,8 +18,13 @@ export class CharacterDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.characterService.getCharacter().subscribe(character => {
+    // this.id = this.activatedRoute.snapshot.paramMap.get('id');
+
+    this.activatedRoute.paramMap.subscribe((params : ParamMap) => {
+      this.id = +params.get('id');
+    })
+    
+    this.characterService.getCharacter(this.id).subscribe(character => {
       this.character = character;
     });
   }

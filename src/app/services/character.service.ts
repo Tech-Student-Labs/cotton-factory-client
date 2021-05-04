@@ -16,13 +16,13 @@ export class CharacterService {
   constructor(private http: HttpClient) { }
 
   getCharacter(id : number = 1) : Observable<Character> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`).pipe(tap( (data) => {
+    return this.http.get<jsonCharacter>(`${this.apiUrl}/${id}`).pipe(map((data : jsonCharacter) => {
       return convertCharacter(data);
     }));
   }
   
   getCharacters(page: number = 1) : Observable<Character[]> {
-    return this.http.get<ApiResponse>(`${this.apiUrl}/?page=${page}`).pipe(map( (data : ApiResponse) : Character[] => {      
+    return this.http.get<ApiResponse>(`${this.apiUrl}/?page=${page}`).pipe(map((data : ApiResponse) : Character[] => {      
       return data.results.map((character : jsonCharacter) => {
         return convertCharacter(character);
       })

@@ -1,10 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, convertToParamMap, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockCharacterService } from '../../tests/data/character-service-abstract';
 import { CharacterService } from '../../services/character.service';
 import { CharacterDetailsComponent } from './character-details.component';
 import { routes } from "../../app-routing.module";
+import { of } from 'rxjs';
+
+const ROUTE_ID : string = "4";
+
+class ActivatedRouteMock {
+  public paramMap = of(convertToParamMap({ 
+      id: ROUTE_ID,       
+  }));
+}
 
 describe('CharacterDetailsComponent', () => {
   let component: CharacterDetailsComponent;
@@ -21,6 +30,9 @@ describe('CharacterDetailsComponent', () => {
         {
           provide: CharacterService, useClass: MockCharacterService
         },
+        {
+          provide: ActivatedRoute, useClass: ActivatedRouteMock
+        }
       ]
     })
     .compileComponents();
@@ -41,20 +53,18 @@ describe('CharacterDetailsComponent', () => {
   });
 
   it('loads an id from the activated route', () => {
-    const spyRoute = spyOn(route.snapshot.paramMap, 'get');
-    const routeID : string = "2";
-
-    spyRoute.and.returnValue(routeID);
-
     component.ngOnInit();
 
-    expect(component.id).toEqual(routeID);
+    expect(component.id).toEqual(+ROUTE_ID);
   });
 
   it('loads data for a character based on ID', () => {
-    spyOn(route.snapshot.paramMap, 'get').and.returnValue("1");
+    component.ngOnInit();
 
+    expect(component.id).toBeDefined();
     expect(component.character).toBeDefined();
+    expect(component.character.created).toBeDefined();
+
   })
 
 });
