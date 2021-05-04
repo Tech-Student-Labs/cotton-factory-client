@@ -5,6 +5,7 @@ import { FilmsService } from '../shared/films.service';
 import { Observable, of } from 'rxjs';
 import responseJson from '../../shared/fixtures/api-response.json';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {FilmsDetailComponent} from '../films-detail/films-detail.component';
 
 const filmServiceStub = {
   getAllFilms: () => of(responseJson)
@@ -17,7 +18,7 @@ describe('FilmsListComponent', () => {
 
   beforeEach(waitForAsync( () => {
     TestBed.configureTestingModule({
-      declarations: [ FilmsListComponent ],
+      declarations: [ FilmsListComponent, FilmsDetailComponent ],
       providers: [
         { provide: FilmsService, useValue: filmServiceStub }
       ],

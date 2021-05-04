@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilmsDetailComponent } from './films-detail.component';
-import {Film} from '../shared/film';
-import {filmFactory} from '../../shared/factories';
+import { filmFactory } from '../../shared/factories';
 
 describe('FilmsDetailComponent', () => {
   let component: FilmsDetailComponent;
@@ -20,6 +19,7 @@ describe('FilmsDetailComponent', () => {
     fixture = TestBed.createComponent(FilmsDetailComponent);
     component = fixture.componentInstance;
     html = fixture.nativeElement;
+    component.film = filmFactory('My Film');
     fixture.detectChanges();
   });
 
@@ -28,9 +28,7 @@ describe('FilmsDetailComponent', () => {
   });
 
   it('should render film details', () => {
-    const film = filmFactory();
-    component.film = film;
-    expect();
+    expect(html.querySelector('h3').textContent).toEqual('My Film');
   });
 
 
