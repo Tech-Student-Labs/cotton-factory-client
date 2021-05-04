@@ -5,6 +5,7 @@ import { SpeciesListComponent } from './components/species-list/species-list.com
 import { PlanetsListComponent } from './components/planets-list/planets-list.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharacterDetailsComponent } from './components/character-details/character-details.component';
+import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
 
 
 export const routes: Routes = [
@@ -15,6 +16,10 @@ export const routes: Routes = [
   {
     path: 'species',
     component: SpeciesListComponent
+  },
+  {
+    path: 'species/:id',
+    component: SpeciesDetailsComponent
   },
   {
     path: 'character/:id',
