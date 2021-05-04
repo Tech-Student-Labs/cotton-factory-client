@@ -7,10 +7,11 @@ import { of } from 'rxjs';
 export class PlanetMockServiceService {
 
   constructor() { }
+
   /**
    * results will return the mock data for the planet.service.spec.ts file to test 
    */
-  results: {} = {
+  results: object = {
     climate: "Arid",
     created: "2014-12-09T13:50:49.641000Z",
     diameter: "10465",

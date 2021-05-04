@@ -1,9 +1,7 @@
 import { Observable, of } from "rxjs";
 import Character from "src/app/models/Character";
 import ApiResponse from "src/app/shared/ApiResponse";
-
 import characters from "./Character.json";
-
 import {convertCharacter} from "../../shared/utilities";
 
 export abstract class CharacterServiceAbstract {

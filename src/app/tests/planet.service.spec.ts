@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Planets } from '../models/planets';
@@ -6,16 +5,9 @@ import { PlanetMockServiceService } from './data/planet-mock-service.service';
 
 import { PlanetService } from '../services/planet.service';
 
-// API Response that is returned from the API Call
-interface APIResponse {
-  count?: number;
-  next?: string;
-  previous?: string;
-  results: Planets[];
-}
 
 // A test API Response used for testing
-const APIResponse1: {} = {
+const APIResponse1: object = {
   climate: "Arid",
   created: "2014-12-09T13:50:49.641000Z",
   diameter: "10465",
